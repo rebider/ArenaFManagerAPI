@@ -1,0 +1,6 @@
+C:\Users\jyu43\OneDrive\Documents\witfx\src\WitFX.MT4.Api\bin\Debug\WitFX.MT4.Api.dll
+C:\Users\jyu43\OneDrive\Documents\witfx\src\WitFX.MT4.Api\bin\Debug\WitFX.MT4.Api.pdb
+C:\Users\jyu43\OneDrive\Documents\witfx\src\WitFX.MT4.Api\obj\Debug\WitFX.MT4.Api.csprojAssemblyReference.cache
+C:\Users\jyu43\OneDrive\Documents\witfx\src\WitFX.MT4.Api\obj\Debug\WitFX.MT4.Api.csproj.CoreCompileInputs.cache
+C:\Users\jyu43\OneDrive\Documents\witfx\src\WitFX.MT4.Api\obj\Debug\WitFX.MT4.Api.dll
+C:\Users\jyu43\OneDrive\Documents\witfx\src\WitFX.MT4.Api\obj\Debug\WitFX.MT4.Api.pdb

@@ -1,0 +1,368 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly WitFX.MT4.Api, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Interface WitFX.MT4.CManagerFactory: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Interfaces:
+    System.IDisposable
+  Methods:
+    WinsockStartup(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    IsValid(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Create(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WitFX.MT4.CManagerInterface: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Interfaces:
+    System.IDisposable
+  Methods:
+    TradesGetByLoginCount(Int32, String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    ServerTime(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Connect(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Disconnect(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    IsConnected(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Login(Int32, String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    ErrorDescription(ReturnCode): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SymbolsRefresh(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SymbolsGetAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SymbolAdd(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    PumpingSwitchEx(PumpExCallback, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    PumpingSwitch(PumpCallback, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    UserRecordsRequest(IReadOnlyList`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    UserRecordNew(UserRecord): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    UsersGet(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    TradeTransaction(TradeTransInfo): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    TradeRecordGet(Int32, TradeRecord&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SymbolInfoGet(String, SymbolInfo&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SymbolInfoUpdated(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Ping(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SymbolsGroupsGet(Int32, IReadOnlyList`1&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    MarginLevelRequest(Int32, MarginLevel&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    TradesUserHistory(Int32, Nullable`1, Nullable`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    TradesGet(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    MarginsGet(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    TradeRecordRequest(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class WitFX.MT4.PumpExCallback: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(PumpCode, TransType, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(PumpCode, TransType, Object, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class WitFX.MT4.PumpCallback: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(PumpCode): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(PumpCode, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Struct WitFX.MT4.ReturnCode: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WitFX.MT4.ReturnCode RET_OK = 0 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_OK_NONE = 1 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_ERROR = 2 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_INVALID_DATA = 3 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TECH_PROBLEM = 4 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_OLD_VERSION = 5 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_NO_CONNECT = 6 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_NOT_ENOUGH_RIGHTS = 7 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TOO_FREQUENT = 8 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_MALFUNCTION = 9 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_GENERATE_KEY = 10 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_SECURITY_SESSION = 11 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_ACCOUNT_DISABLED = 64 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_BAD_ACCOUNT_INFO = 65 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_PUBLIC_KEY_MISSING = 66 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_TIMEOUT = 128 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_BAD_PRICES = 129 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_BAD_STOPS = 130 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_BAD_VOLUME = 131 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_MARKET_CLOSED = 132 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_DISABLE = 133 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_NO_MONEY = 134 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_PRICE_CHANGED = 135 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_OFFQUOTES = 136 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_BROKER_BUSY = 137 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_REQUOTE = 138 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_ORDER_LOCKED = 139 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_LONG_ONLY = 140 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_TOO_MANY_REQ = 141 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_ACCEPTED = 142 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_PROCESS = 143 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_USER_CANCEL = 144 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_MODIFY_DENIED = 145 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_CONTEXT_BUSY = 146 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_EXPIRATION_DENIED = 147 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_TOO_MANY_ORDERS = 148 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_HEDGE_PROHIBITED = 149 : Public, Static, Literal, HasDefault
+    WitFX.MT4.ReturnCode RET_TRADE_PROHIBITED_BY_FIFO = 150 : Public, Static, Literal, HasDefault
+Struct WitFX.MT4.TradeTransType: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WitFX.MT4.TradeTransType TT_PRICES_GET = 0 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_PRICES_REQUOTE = 1 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_ORDER_IE_OPEN = 64 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_ORDER_REQ_OPEN = 65 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_ORDER_MK_OPEN = 66 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_ORDER_PENDING_OPEN = 67 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_ORDER_IE_CLOSE = 68 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_ORDER_REQ_CLOSE = 69 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_ORDER_MK_CLOSE = 70 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_ORDER_MODIFY = 71 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_ORDER_DELETE = 72 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_ORDER_CLOSE_BY = 73 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_ORDER_CLOSE_ALL = 74 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_BR_ORDER_OPEN = 75 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_BR_ORDER_CLOSE = 76 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_BR_ORDER_DELETE = 77 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_BR_ORDER_CLOSE_BY = 78 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_BR_ORDER_CLOSE_ALL = 79 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_BR_ORDER_MODIFY = 80 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_BR_ORDER_ACTIVATE = 81 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_BR_ORDER_COMMENT = 82 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeTransType TT_BR_BALANCE = 83 : Public, Static, Literal, HasDefault
+Struct WitFX.MT4.TradeCommand: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WitFX.MT4.TradeCommand OP_BUY = 0 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeCommand OP_SELL = 1 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeCommand OP_BUY_LIMIT = 2 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeCommand OP_SELL_LIMIT = 3 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeCommand OP_BUY_STOP = 4 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeCommand OP_SELL_STOP = 5 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeCommand OP_BALANCE = 6 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TradeCommand OP_CREDIT = 7 : Public, Static, Literal, HasDefault
+Struct WitFX.MT4.TransType: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WitFX.MT4.TransType TRANS_ADD = 0 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TransType TRANS_DELETE = 1 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TransType TRANS_UPDATE = 2 : Public, Static, Literal, HasDefault
+    WitFX.MT4.TransType TRANS_CHANGE_GRP = 3 : Public, Static, Literal, HasDefault
+Struct WitFX.MT4.PumpCode: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WitFX.MT4.PumpCode PUMP_START_PUMPING = 0 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_SYMBOLS = 1 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_GROUPS = 2 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_USERS = 3 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_ONLINE = 4 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_BIDASK = 5 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_NEWS = 6 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_NEWS_BODY = 7 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_MAIL = 8 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_TRADES = 9 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_REQUESTS = 10 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_PLUGINS = 11 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_ACTIVATION = 12 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_MARGINCALL = 13 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_STOP_PUMPING = 14 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_PING = 15 : Public, Static, Literal, HasDefault
+    WitFX.MT4.PumpCode PUMP_UPDATE_NEWS_NEW = 16 : Public, Static, Literal, HasDefault
+Class WitFX.MT4.ManagerHost: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Fields:
+    WitFX.MT4.IManagerHost Current : Public, Static
+  Methods:
+    CreateFactory(Action`1): PrivateScope, Public, Static, HideBySig
+Interface WitFX.MT4.IManagerHost: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    CreateFactory(Action`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class WitFX.MT4.MT4Helper: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Fields:
+    UInt32 USER_COLOR_NONE = 4278190080 : Public, Static, Literal, HasDefault
+    Int32 MAX_SEC_GROUPS = 32 : Public, Static, Literal, HasDefault
+  Methods:
+    GetMt4ZeroUtc(): PrivateScope, Public, Static, HideBySig
+    FromMT4Time(Int64): PrivateScope, Public, Static, HideBySig
+    ToMT4Time(Nullable`1): PrivateScope, Public, Static, HideBySig
+Class WitFX.MT4.ConSymbolGroup: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String name : Public
+    System.String description : Public
+Class WitFX.MT4.SymbolInfo: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String symbol : Public
+    Int32 digits : Public
+    Int32 count : Public
+    Int32 visible : Public
+    Int32 type : Public
+    Double point : Public
+    Int32 spread : Public
+    Int32 spread_balance : Public
+    Int32 direction : Public
+    Int32 updateflag : Public
+    System.Nullable`1[System.DateTimeOffset] lasttime : Public
+    Double bid : Public
+    Double ask : Public
+    Double high : Public
+    Double low : Public
+    Double commission : Public
+    Int32 comm_type : Public
+Class WitFX.MT4.TradeRecord: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 order : Public
+    Int32 login : Public
+    System.String symbol : Public
+    Int32 digits : Public
+    Int32 cmd : Public
+    Int32 volume : Public
+    System.Nullable`1[System.DateTimeOffset] open_time : Public
+    Int32 state : Public
+    Double open_price : Public
+    Double sl : Public
+    Double tp : Public
+    System.Nullable`1[System.DateTimeOffset] close_time : Public
+    Int32 gw_volume : Public
+    System.Nullable`1[System.DateTimeOffset] expiration : Public
+    Char reason : Public
+    Double commission : Public
+    Double commission_agent : Public
+    Double storage : Public
+    Double close_price : Public
+    Double profit : Public
+    Double profitinpips : Public
+    Double taxes : Public
+    Int32 magic : Public
+    System.String comment : Public
+    Int32 gw_order : Public
+    Int32 activation : Public
+    Int16 gw_open_price : Public
+    Int16 gw_close_price : Public
+    Double margin_rate : Public
+    System.Nullable`1[System.DateTimeOffset] timestamp : Public
+Class WitFX.MT4.MarginLevel: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 login : Public
+    System.String group : Public
+    Int32 leverage : Public
+    Int32 updated : Public
+    Double balance : Public
+    Double equity : Public
+    Int32 volume : Public
+    Double margin : Public
+    Double margin_free : Public
+    Double margin_level : Public
+    Int32 margin_type : Public
+    Int32 level_type : Public
+Class WitFX.MT4.ConSymbol: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String symbol : Public
+    System.String description : Public
+    System.String source : Public
+    System.String currency : Public
+    Int32 type : Public
+    Int32 digits : Public
+    Int32 trade : Public
+    Int32 count : Public
+    Int32 count_original : Public
+    Int32 realtime : Public
+    System.Nullable`1[System.DateTimeOffset] starting : Public
+    System.Nullable`1[System.DateTimeOffset] expiration : Public
+    Int32 profit_mode : Public
+    Int32 profit_reserved : Public
+    Int32 filter : Public
+    Int32 filter_counter : Public
+    Double filter_limit : Public
+    Int32 filter_smoothing : Public
+    Single filter_reserved : Public
+    Int32 logging : Public
+    Int32 spread : Public
+    Int32 spread_balance : Public
+    Int32 exemode : Public
+    Int32 swap_enable : Public
+    Int32 swap_type : Public
+    Double swap_long : Public
+    Double swap_short : Public
+    Int32 swap_rollover3days : Public
+    Double contract_size : Public
+    Double tick_value : Public
+    Double tick_size : Public
+    Int32 stops_level : Public
+    Int32 gtc_pendings : Public
+    Int32 margin_mode : Public
+    Double margin_initial : Public
+    Double margin_maintenance : Public
+    Double margin_hedged : Public
+    Double margin_divider : Public
+    Double point : Public
+    Double multiply : Public
+    Double bid_tickvalue : Public
+    Double ask_tickvalue : Public
+    Int32 long_only : Public
+    Int32 instant_max_volume : Public
+    System.String margin_currency : Public
+    Int32 freeze_level : Public
+    Int32 margin_hedged_strong : Public
+    System.Nullable`1[System.DateTimeOffset] value_date : Public
+    Int32 quotes_delay : Public
+    Int32 swap_openprice : Public
+    Int32 swap_variation_margin : Public
+Class WitFX.MT4.UserRecord: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 login : Public
+    System.String group : Public
+    System.String password : Public
+    Boolean enable : Public
+    Boolean enable_change_password : Public
+    Boolean enable_read_only : Public
+    Boolean enable_otp : Public
+    System.String password_investor : Public
+    System.String password_phone : Public
+    System.String name : Public
+    System.String country : Public
+    System.String city : Public
+    System.String state : Public
+    System.String zipcode : Public
+    System.String address : Public
+    System.String lead_source : Public
+    System.String phone : Public
+    System.String email : Public
+    System.String comment : Public
+    System.String id : Public
+    System.String status : Public
+    System.Nullable`1[System.DateTimeOffset] regdate : Public
+    System.Nullable`1[System.DateTimeOffset] lastdate : Public
+    Int32 leverage : Public
+    Int32 agent_account : Public
+    System.Nullable`1[System.DateTimeOffset] timestamp : Public
+    Int32 last_ip : Public
+    Double balance : Public
+    Double prevmonthbalance : Public
+    Double prevbalance : Public
+    Double credit : Public
+    Double interestrate : Public
+    Double taxes : Public
+    Double prevmonthequity : Public
+    Double prevequity : Public
+    System.String otp_secret : Public
+    System.String secure_reserved : Public
+    Boolean send_reports : Public
+    UInt32 mqid : Public
+    UInt64 user_color : Public
+Class WitFX.MT4.TradeTransInfo: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    WitFX.MT4.TradeTransType type : Public
+    Byte flags : Public
+    Int16 cmd : Public
+    Int32 order : Public
+    Int32 orderby : Public
+    System.String symbol : Public
+    Int32 volume : Public
+    Double price : Public
+    Double sl : Public
+    Double tp : Public
+    Int32 ie_deviation : Public
+    System.String comment : Public
+    System.Nullable`1[System.DateTimeOffset] expiration : Public
+    Int32 crc : Public
